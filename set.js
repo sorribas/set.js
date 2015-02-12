@@ -43,6 +43,7 @@ var value = true
   }
 
 var Set = function(input){
+  if (!(this instanceof Set)) return new Set(input)
   this._set = unique(input || [])
 }
 

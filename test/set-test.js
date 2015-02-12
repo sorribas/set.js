@@ -195,5 +195,21 @@ vows.describe('Set').addBatch({
             }
         }
     }
+
+    , "Initialized with [0,1,2,3,4] without the new keyword": {
+        topic: Set([0, 1, 2, 3, 4])
+
+        , "will be a Set": function(topic){
+            assert.instanceOf(topic, Set)
+        }
+
+        , "is not empty": function(topic){
+            assert.isFalse(topic.empty())
+        }
+
+        , "contains a 0": function(topic){
+            assert.isTrue(topic.contains(0))
+        }
+    }
 }
 }).export(module)
